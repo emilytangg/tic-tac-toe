@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -16,11 +16,13 @@ class Board extends React.Component {
     this.state = {
       squares: Array(9).fill(null),
       xIsNext: true,
+      moves: 0,
     };
   }
 
   handleClick(i) {
     const squares = this.state.squares.slice();
+    const moves = this.setState({moves: this.state.moves + 1})
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
@@ -40,14 +42,18 @@ class Board extends React.Component {
     );     
   }
   
-  render() {
+  render(i) {
+    const squares = this.state.squares.slice();
     const winner = calculateWinner(this.state.squares);
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
     }
+    else if (!winner && this.state.moves == 9) {
+      status = 'Tie!';
+    }
     else {
-      status = 'Next player ' + (this.state.xIsNext? 'X' : 'O');
+      status = 'Next player: ' + (this.state.xIsNext? 'X' : 'O');
     }
 
     return (
