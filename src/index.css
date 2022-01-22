@@ -56,6 +56,6 @@ ol, ul {
   width: 40%;
 }
 
-/*.game-info {
-  margin-left: 20px;
-}*/
+.moveList:focus {
+  font-weight: bold;
+}
