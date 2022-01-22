@@ -4,7 +4,7 @@ This project is a simple tic-tac-toe game which serves as a personal learning ac
 ## Ideas for Improvement
 ### Suggestions from [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html#completing-the-game):
 - [ ] Display the location for each move in the format (col, row) in the move history list.
-- [ ] Bold the currently selected item in the move list.
+- [X] Bold the currently selected item in the move list.
 - [x] Rewrite Board to use two loops to make the squares instead of hardcoding them.
 - [ ] Add a toggle button that lets you sort the moves in either ascending or descending order.
 - [ ] When someone wins, highlight the three squares that caused the win.
